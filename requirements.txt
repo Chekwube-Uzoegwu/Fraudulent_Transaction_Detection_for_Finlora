@@ -1,0 +1,11 @@
+mlflow
+dagshub
+scikit-learn
+matplotlib
+pandas==2.3.3
+numpy==2.4.6
+seaborn
+plotly
+xgboost
+fastapi
+uvicorn
