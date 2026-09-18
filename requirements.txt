@@ -6,6 +6,8 @@ pandas==2.3.3
 numpy==2.4.6
 seaborn
 plotly
-xgboost
+xgboost==3.2.0
 fastapi
 uvicorn
+shap==0.51.0
+requests
