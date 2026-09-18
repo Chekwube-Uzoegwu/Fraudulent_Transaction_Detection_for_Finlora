@@ -114,6 +114,13 @@ def engineer_feature(data):
 
     df = data.copy()
 
+    # Lowercases free-text categories to match historical_data's stored casing,
+    # otherwise the OneHotEncoder treats different casing as unseen and zeros it out.
+    # Currency codes are excluded, EXCHANGE_RATE below is keyed in uppercase.
+    for col in ['home_country', 'ip_country', 'channel', 'kyc_tier']:
+        if col in df.columns:
+            df[col] = df[col].str.lower()
+
     df['location_mismatch'] = df['location_mismatch'].map({'Yes': True, 'No': False}).astype(bool)
     df['new_device'] = df['new_device'].map({'Yes': True, 'No': False}).astype(bool)
 
