@@ -4,7 +4,7 @@ from mlflow.tracking import MlflowClient
 from src.utility.mlflow_setup import setup_mlflow
 
 
-def load_registered_model(model_name="Fraud_Detection_XGBoost_Pipeline", model_version="latest"):
+def load_registered_model(model_name="Fraud_Detection_LightGBM_Pipeline", model_version="latest"):
     """
     Load a registered model from the MLflow Model Registry.
     """
