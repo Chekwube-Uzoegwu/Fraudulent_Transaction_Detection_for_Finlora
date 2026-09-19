@@ -1,0 +1,8 @@
+finlora_env/
+.git/
+__pycache__/
+*.pyc
+.pytest_cache/
+Notebooks/
+*.ipynb
+diagnostic_check.py

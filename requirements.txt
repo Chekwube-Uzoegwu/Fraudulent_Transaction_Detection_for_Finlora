@@ -13,3 +13,4 @@ shap==0.51.0
 requests
 streamlit
 lightgbm
+imbalanced-learn
