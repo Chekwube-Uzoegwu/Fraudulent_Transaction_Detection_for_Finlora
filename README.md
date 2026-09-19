@@ -72,8 +72,10 @@ docker build -t finlora-fraud-api .
 The model is loaded from the MLflow Model Registry hosted on DagsHub, so the container needs tracking credentials passed in at runtime rather than baked into the image:
 
 ```bash
-docker run -p 8000:8000 -e MLFLOW_TRACKING_USERNAME=<your_dagshub_username> -e MLFLOW_TRACKING_PASSWORD=<your_dagshub_token> finlora-fraud-api
+docker run -p 8000:8000 -e MLFLOW_TRACKING_USERNAME=<your_dagshub_username> -e MLFLOW_TRACKING_PASSWORD=<your_dagshub_token> -e DAGSHUB_USER_TOKEN=<your_dagshub_token> finlora-fraud-api
 ```
+
+`DAGSHUB_USER_TOKEN` is required, `dagshub.init()` runs its own authorization step separately from MLflow's own credentials, and without it the container will hang waiting for an interactive login that a headless container can never complete.
 
 Then test it:
 
